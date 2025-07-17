@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitio de Ventas en Línea</title>
+    <title>TecservicesGT</title>
     <style>
         * {
             box-sizing: border-box;
@@ -89,14 +89,96 @@
     <script>
         function mostrarContenido(titulo) {
             const contenido = document.getElementById("contenido");
-            contenido.innerHTML = `<h2>${titulo}</h2><p>Contenido para "${titulo}"...</p>`;
+            let html = '';
+            switch (titulo) {
+                case 'Inicio del sitio':
+                    html = `
+                        <h2>Bienvenido a TecservicesGT</h2>
+                        <p>Somos tu mejor opción en productos tecnológicos, servicios técnicos y soluciones en impresión, redes y más.</p>
+                    `;
+                    break;
+                case 'Nuestros Servicios':
+                    html = `
+                        <h2>Servicios</h2>
+                        <ul>
+                            <li>Servicio técnico para celulares, computadoras e impresoras</li>
+                            <li>Configuración y mantenimiento de redes</li>
+                            <li>Soporte técnico especializado</li>
+                        </ul>
+                    `;
+                    break;
+                case 'Productos que ofrecemos':
+                    html = `
+                        <h2>Productos</h2>
+                        <ul>
+                            <li>Accesorios para celular</li>
+                            <li>Accesorios para computadoras</li>
+                            <li>Suministros de impresión</li>
+                        </ul>
+                    `;
+                    break;
+                case 'Novedades en la empresa':
+                    html = `
+                        <h2>Novedades</h2>
+                        <p>Pronto lanzaremos promociones especiales y nuevos productos tecnológicos.</p>
+                    `;
+                    break;
+                case 'Información de la empresa':
+                    html = `
+                        <h2>Sobre TecservicesGT</h2>
+                        <p>Empresa guatemalteca dedicada a la tecnología. Confiabilidad, experiencia y atención personalizada.</p>
+                    `;
+                    break;
+                case 'Misión y Visión':
+                    html = `
+                        <h2>Misión</h2>
+                        <p>Brindar soluciones tecnológicas confiables y de calidad, satisfaciendo las necesidades de nuestros clientes mediante productos innovadores y servicio técnico especializado.</p>
+                        <h2>Visión</h2>
+                        <p>Ser líderes en el mercado tecnológico de Guatemala, reconocidos por nuestra excelencia en atención, innovación y compromiso con el cliente.</p>
+                    `;
+                    break;
+                case 'Contactarnos':
+                    html = `
+                        <h2>Contáctanos</h2>
+                        <p>📧 Correo: <a href="mailto:tecservicesgt@gmail.com">tecservicesgt@gmail.com</a><br>
+                        ☎ Teléfonos: 2433 0139 y 3207 2478</p>
+                    `;
+                    break;
+                case 'Cómo llegar':
+                    html = `
+                        <h2>Ubicación</h2>
+                        <p>Estamos ubicados en Guatemala. <br> (Próximamente mapa de ubicación aquí).</p>
+                    `;
+                    break;
+                case 'Preguntas frecuentes':
+                    html = `
+                        <h2>Preguntas frecuentes</h2>
+                        <p>¿Tienen garantía? Sí. ¿Hacen entregas? Consultar según zona.</p>
+                    `;
+                    break;
+                case 'Invertir en nuestra empresa':
+                    html = `
+                        <h2>Oportunidades de inversión</h2>
+                        <p>Estamos abiertos a alianzas estratégicas. Escríbenos a tecservicesgt@gmail.com.</p>
+                    `;
+                    break;
+                case 'Síganos en las redes...':
+                    html = `
+                        <h2>Redes Sociales</h2>
+                        <p>Síguenos en nuestras redes sociales (próximamente enlaces).</p>
+                    `;
+                    break;
+                default:
+                    html = `<p>Contenido para "${titulo}"...</p>`;
+            }
+            contenido.innerHTML = html;
         }
     </script>
 </head>
 <body>
     <header>
         <img src="logo.png" alt="Logo Empresa">
-        <h1>Bienvenido a TecservicesGT, tu sitio de confianza para comprar en linea</h1>
+        <h1>TecservicesGT - Soluciones Tecnológicas</h1>
     </header>
 
     <div class="container">
@@ -106,6 +188,7 @@
             <a href="#" onclick="mostrarContenido('Productos que ofrecemos')">Productos que ofrecemos</a>
             <a href="#" onclick="mostrarContenido('Novedades en la empresa')">Novedades en la empresa</a>
             <a href="#" onclick="mostrarContenido('Información de la empresa')">Información de la empresa</a>
+            <a href="#" onclick="mostrarContenido('Misión y Visión')">Misión y Visión</a>
             <a href="#" onclick="mostrarContenido('Contactarnos')">Contactarnos</a>
             <a href="#" onclick="mostrarContenido('Cómo llegar')">Cómo llegar</a>
             <a href="#" onclick="mostrarContenido('Preguntas frecuentes')">Preguntas frecuentes</a>
@@ -114,16 +197,12 @@
         </nav>
 
         <main class="content" id="contenido">
-            <p>Página inicial del sitio...</p>
-            <ul>
-                <li>.</li>
-                <li>.</li>
-                <li>.</li>
-            </ul>
+            <h2>Bienvenido a TecservicesGT</h2>
+            <p>Somos tu mejor opción en productos tecnológicos, servicios técnicos y soluciones en impresión, redes y más.</p>
 
             <div class="footer">
-                Creada por rcm 15 febrero de 2017<br>
-                versión 1.0
+                Creada por TecservicesGT<br>
+                Versión 1.0 - julio 2025
             </div>
         </main>
     </div>
