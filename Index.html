@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio de Ventas en Línea</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #d0fdfd;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 2px solid #000;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header h1 {
+            color: purple;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav.sidebar {
+            width: 220px;
+            background-color: #fefefe;
+            padding-top: 20px;
+            border-right: 2px solid #000;
+        }
+
+        nav.sidebar a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #0000aa;
+            font-weight: bold;
+            border-left: 10px solid black;
+            margin: 5px 0;
+            transition: background 0.3s;
+        }
+
+        nav.sidebar a:hover {
+            background-color: #f0f0f0;
+            color: #aa007f;
+        }
+
+        main.content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav.sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #000;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <script>
+        function mostrarContenido(titulo) {
+            const contenido = document.getElementById("contenido");
+            contenido.innerHTML = `<h2>${titulo}</h2><p>Contenido para "${titulo}"...</p>`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Empresa">
+        <h1>Bienvenido a TecservicesGT, tu sitio de confianza para comprar en linea</h1>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <a href="#" onclick="mostrarContenido('Inicio del sitio')">Inicio del sitio</a>
+            <a href="#" onclick="mostrarContenido('Nuestros Servicios')">Nuestros Servicios</a>
+            <a href="#" onclick="mostrarContenido('Productos que ofrecemos')">Productos que ofrecemos</a>
+            <a href="#" onclick="mostrarContenido('Novedades en la empresa')">Novedades en la empresa</a>
+            <a href="#" onclick="mostrarContenido('Información de la empresa')">Información de la empresa</a>
+            <a href="#" onclick="mostrarContenido('Contactarnos')">Contactarnos</a>
+            <a href="#" onclick="mostrarContenido('Cómo llegar')">Cómo llegar</a>
+            <a href="#" onclick="mostrarContenido('Preguntas frecuentes')">Preguntas frecuentes</a>
+            <a href="#" onclick="mostrarContenido('Invertir en nuestra empresa')">Invertir en nuestra empresa</a>
+            <a href="#" https://www.rcmedu.com/comercioe/sitiodemo2/productos.html="mostrarContenido('Síganos en las redes...')">Síganos en las redes...</a>
+        </nav>
+
+        <main class="content" id="contenido">
+            <p>Página inicial del sitio...</p>
+            <ul>
+                <li>.</li>
+                <li>.</li>
+                <li>.</li>
+            </ul>
+
+            <div class="footer">
+                Creada por rcm 15 febrero de 2017<br>
+                versión 1.0
+            </div>
+        </main>
+    </div>
+</body>
+</html>
