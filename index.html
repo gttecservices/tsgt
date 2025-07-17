@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TecservicesGT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -11,26 +14,27 @@
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #d0fdfd;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #eef2f3, #ffffff);
+            color: #333;
         }
 
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 20px;
-            background-color: #fff;
-            border-bottom: 2px solid #000;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         header img {
-            height: 50px;
+            height: 60px;
         }
 
         header h1 {
-            color: purple;
-            font-size: 24px;
+            color: #2c3e50;
+            font-size: 28px;
             margin: 0;
         }
 
@@ -40,45 +44,76 @@
         }
 
         nav.sidebar {
-            width: 220px;
-            background-color: #fefefe;
-            padding-top: 20px;
-            border-right: 2px solid #000;
+            width: 240px;
+            background-color: #ffffff;
+            padding-top: 30px;
+            border-right: 1px solid #e0e0e0;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.03);
         }
 
         nav.sidebar a {
             display: block;
-            padding: 10px 15px;
+            padding: 14px 20px;
+            margin: 5px 10px;
+            border-radius: 8px;
             text-decoration: none;
-            color: #0000aa;
-            font-weight: bold;
-            border-left: 10px solid black;
-            margin: 5px 0;
-            transition: background 0.3s;
+            color: #34495e;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         nav.sidebar a:hover {
-            background-color: #f0f0f0;
-            color: #aa007f;
+            background-color: #dfe6e9;
+            color: #0984e3;
         }
 
         main.content {
             flex: 1;
-            padding: 20px;
+            padding: 40px;
+            animation: fadein 0.3s ease-in;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            color: #2d3436;
+            font-size: 26px;
+            margin-top: 0;
+        }
+
+        p, ul {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        ul {
+            padding-left: 20px;
         }
 
         .footer {
             margin-top: 50px;
             font-style: italic;
-            color: #555;
+            font-size: 14px;
+            color: #888;
         }
 
-        /* Responsive */
+        iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
         @media (max-width: 768px) {
             nav.sidebar {
                 width: 100%;
                 border-right: none;
-                border-bottom: 2px solid #000;
+                border-bottom: 2px solid #ccc;
             }
 
             .container {
@@ -92,81 +127,37 @@
             let html = '';
             switch (titulo) {
                 case 'Inicio del sitio':
-                    html = `
-                        <h2>Bienvenido a TecservicesGT</h2>
-                        <p>Somos tu mejor opción en productos tecnológicos, servicios técnicos y soluciones en impresión, redes y más.</p>
-                    `;
+                    html = `<h2>Bienvenido a TecservicesGT</h2><p>Somos tu mejor opción en productos tecnológicos, servicios técnicos y soluciones en impresión, redes y más.</p>`;
                     break;
                 case 'Nuestros Servicios':
-                    html = `
-                        <h2>Servicios</h2>
-                        <ul>
-                            <li>Servicio técnico para celulares, computadoras e impresoras</li>
-                            <li>Configuración y mantenimiento de redes</li>
-                            <li>Soporte técnico especializado</li>
-                        </ul>
-                    `;
+                    html = `<h2>Servicios</h2><ul><li>Servicio técnico para celulares, computadoras e impresoras</li><li>Configuración y mantenimiento de redes</li><li>Soporte técnico especializado</li></ul>`;
                     break;
                 case 'Productos que ofrecemos':
-                    html = `
-                        <h2>Productos</h2>
-                        <ul>
-                            <li>Accesorios para celular</li>
-                            <li>Accesorios para computadoras</li>
-                            <li>Suministros de impresión</li>
-                        </ul>
-                    `;
+                    html = `<h2>Productos</h2><ul><li>Accesorios para celular</li><li>Accesorios para computadoras</li><li>Suministros de impresión</li></ul>`;
                     break;
                 case 'Novedades en la empresa':
-                    html = `
-                        <h2>Novedades</h2>
-                        <p>Pronto lanzaremos promociones especiales y nuevos productos tecnológicos.</p>
-                    `;
+                    html = `<h2>Novedades</h2><p>Pronto lanzaremos promociones especiales y nuevos productos tecnológicos.</p>`;
                     break;
                 case 'Información de la empresa':
-                    html = `
-                        <h2>Sobre TecservicesGT</h2>
-                        <p>Empresa guatemalteca dedicada a la tecnología. Confiabilidad, experiencia y atención personalizada.</p>
-                    `;
+                    html = `<h2>Sobre TecservicesGT</h2><p>Empresa guatemalteca dedicada a la tecnología. Confiabilidad, experiencia y atención personalizada.</p>`;
                     break;
                 case 'Misión y Visión':
-                    html = `
-                        <h2>Misión</h2>
-                        <p>Brindar soluciones tecnológicas confiables y de calidad, satisfaciendo las necesidades de nuestros clientes mediante productos innovadores y servicio técnico especializado.</p>
-                        <h2>Visión</h2>
-                        <p>Ser líderes en el mercado tecnológico de Guatemala, reconocidos por nuestra excelencia en atención, innovación y compromiso con el cliente.</p>
-                    `;
+                    html = `<h2>Misión</h2><p>Brindar soluciones tecnológicas confiables y de calidad, satisfaciendo las necesidades de nuestros clientes mediante productos innovadores y servicio técnico especializado.</p><h2>Visión</h2><p>Ser líderes en el mercado tecnológico de Guatemala, reconocidos por nuestra excelencia en atención, innovación y compromiso con el cliente.</p>`;
                     break;
                 case 'Contactarnos':
-                    html = `
-                        <h2>Contáctanos</h2>
-                        <p>📧 Correo: <a href="mailto:tecservicesgt@gmail.com">tecservicesgt@gmail.com</a><br>
-                        ☎ Teléfonos: 2433 0139 y 3207 2478</p>
-                    `;
+                    html = `<h2>Contáctanos</h2><p>📧 Correo: <a href="mailto:tecservicesgt@gmail.com">tecservicesgt@gmail.com</a><br>☎ Teléfonos: 2433 0139 y 3207 2478</p>`;
                     break;
                 case 'Cómo llegar':
-                    html = `
-                        <h2>Ubicación</h2>
-                        <p>Estamos ubicados en Guatemala. <br> (Próximamente mapa de ubicación aquí).</p>
-                    `;
+                    html = `<h2>Ubicación</h2><p>📍 Búscanos en Waze como <strong>TecServicesGT</strong></p><p><a href="https://ul.waze.com/ul?q=TecServicesGT" target="_blank">Abrir ubicación en Waze</a></p><iframe src="https://embed.waze.com/iframe?zoom=16&q=TecServicesGT" allowfullscreen></iframe>`;
                     break;
                 case 'Preguntas frecuentes':
-                    html = `
-                        <h2>Preguntas frecuentes</h2>
-                        <p>¿Tienen garantía? Sí. ¿Hacen entregas? Consultar según zona.</p>
-                    `;
+                    html = `<h2>Preguntas frecuentes</h2><p>¿Tienen garantía? Sí. ¿Hacen entregas? Consultar según zona.</p>`;
                     break;
                 case 'Invertir en nuestra empresa':
-                    html = `
-                        <h2>Oportunidades de inversión</h2>
-                        <p>Estamos abiertos a alianzas estratégicas. Escríbenos a tecservicesgt@gmail.com.</p>
-                    `;
+                    html = `<h2>Oportunidades de inversión</h2><p>Estamos abiertos a alianzas estratégicas. Escríbenos a tecservicesgt@gmail.com.</p>`;
                     break;
                 case 'Síganos en las redes...':
-                    html = `
-                        <h2>Redes Sociales</h2>
-                        <p>Síguenos en nuestras redes sociales (próximamente enlaces).</p>
-                    `;
+                    html = `<h2>Redes Sociales</h2><p>Síguenos en nuestras redes sociales (próximamente enlaces).</p>`;
                     break;
                 default:
                     html = `<p>Contenido para "${titulo}"...</p>`;
